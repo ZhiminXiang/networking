@@ -40,7 +40,7 @@ func TestUpdate(t *testing.T) {
 
 	// Create a simple Ingress over the Service.
 	hostname := test.ObjectNameForTest(t)
-	ing, client, cancel := CreateIngressReady(ctx, t, clients, v1alpha1.IngressSpec{
+	ing, client, cancel := (ctx, t, clients, v1alpha1.IngressSpec{
 		Rules: []v1alpha1.IngressRule{{
 			Hosts:      []string{hostname + ".example.com"},
 			Visibility: v1alpha1.IngressVisibilityExternalIP,
